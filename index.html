@@ -1,121 +1,340 @@
-<!DOCTYPE html>
-<html lang='en'>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Gallifrey Station</title>
-  <meta charset='utf-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'>
-  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js'></script>
-  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js'></script>
-  <link rel='stylesheet' type='text/css' href='assets/css/index.css'>
-  <script src='assets/js/api_assignment.js'></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orbit Mechanic — Gallifrey Station</title>
+  <meta name="description" content="Gallifrey Station is the home base of Orbit Mechanic: games, tools, and simulations built by a recovering rocket scientist in Florida.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Orbit Mechanic — Gallifrey Station">
+  <meta property="og:description" content="A small station with a long antenna. Games, tools, and simulations from Orbit Mechanic.">
+  <meta property="og:url" content="https://orbitmechanic.github.io/">
+  <meta property="og:image" content="https://orbitmechanic.github.io/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Orbit Mechanic — Gallifrey Station">
+  <meta name="twitter:description" content="A small station with a long antenna. Games, tools, and simulations from Orbit Mechanic.">
+  <meta name="twitter:image" content="https://orbitmechanic.github.io/og.png">
+  <meta name="theme-color" content="#05070b">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preload" as="image" href="assets/station/gallifrey-poster.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/station.css">
 </head>
-<body style='background-color:rgba(41, 41, 41, 0.404)'>
+<body>
+  <a class="skip-link" href="#log">Skip to log</a>
 
-<div class='jumbotron text-center' id='headerbillboard'>
-  <h1>Gallifrey Station</h1>
-  <p>Orbit Mechanic's GitHub Outpost</p> 
-</div>
+  <header class="site-head" id="top">
+    <a class="brand" href="#station" aria-label="Gallifrey Station home">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <path d="M20 2 38 20 20 38 2 20Z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <ellipse cx="20" cy="20" rx="15" ry="5" fill="none" stroke="currentColor" stroke-width=".8" transform="rotate(-24 20 20)"/>
+        <circle cx="20" cy="20" r="6.5" fill="none" stroke="var(--ice)" stroke-width="1.2"/>
+        <circle cx="20" cy="20" r="1.8" fill="currentColor"/>
+      </svg>
+      <span class="brand-text">Gallifrey<br>Station</span>
+    </a>
 
-<nav class='navbar navbar-expand-sm bg-dark navbar-dark'>
-  <a class='navbar-brand' href='#'>Gateways</a>
-  <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
-    <span class='navbar-toggler-icon'></span>
-  </button>
-  <div class='collapse navbar-collapse' id='collapsibleNavbar'>
-    <ul class='navbar-nav'>
-      <li class='nav-item'>
-        <a class='nav-link' href='https://academy.ivanontech.com/'>Academy</a>
-      </li>
-      <li class='nav-item'>
-        <a class='nav-link' href='https://coin360.com/'>Market</a>
-      </li>
-      <li class='nav-item'>
-        <a class='nav-link' href='https://defiscore.io/'>DeFi</a>
-      </li>    
-      <li class='nav-item'>
-        <a class='nav-link' href='https://claimable.vercel.app/'>AirDrops</a>
-      </li> 
-    </ul>
-  </div>  
-</nav>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span>
+      <span class="sr-only">Menu</span>
+    </button>
 
-<div class='container' style='margin-top:30px;'>
-  <div class='row'>
-    <div class='col-sm-4'>
-      <h2>Your Captain</h2>
-      <p>Cryptocurrency explorer.</p>
-      <h6>File Photo:</h6>
-      <div class='fakeimg shady' id='bridge'></div>
-      <br>
-      <h5>Resume, Certifications, and Permits:</h5>
-      <ul class='nav nav-pills flex-column'>
-        <li class='nav-item'>
-          <a class='nav-link active' href='https://github.com/orbitmechanic'>GitHub</a>
-        </li>
-        <li class='nav-item'>
-          <a class='nav-link' href='https://www.linkedin.com/in/astrobob/'>LinkedIn</a>
-        </li>
-        <li class='nav-item'>
-          <a class='nav-link' href='https://forum.ivanontech.com/u/marsrvr/summary'>Academy Forums</a>
-        </li>
-        <li class='nav-item'>
-          <a class='nav-link' href='https://www.minds.com/newsfeed/subscriptions'>Minds</a>
-        </li>
-      </ul>
-      <hr class='d-sm-none'>
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <a href="#log">Log</a>
+      <a href="#bays">Bays</a>
+      <a href="#dispatch">Dispatch</a>
+      <a href="#gateways">Gateways</a>
+    </nav>
+
+    <div class="head-status">
+      <i></i>
+      <span>In orbit</span>
     </div>
-    <div class='col-sm-8'>
-      <h2>Crypto Market Monitor</h2>
-      <h5>Crypto markets scanned from orbit</h5>
-      <a href='https://github.com/orbitmechanic/React/tree/master/coin-exchange'><h5><i>(IoT BootCamp Project 1)</i></h5></a>
-      <div class='flex-containter projectboard shady' id='marketscanner'>
-        <div><h2 class='marquisText dark' >Archived.</h2></div>
-        <div class='flex-containter assetcells'>
-          <div><button type='button' 
-            class='btn btn-default btn-sm pinger shady'
-            onclick='previewPrice()'>Ping</button></div>
-          <div><p class='assettext light' id='tickerquote'>Ethereum: $blah. up 1.3%</p></div>
-        </div> 
-      </div> 
-      <br>
-      <h2>CryptoBunnies</h2>
-      <h5>Synthetic biology on the blockchain</h5>
-      <a href='https://github.com/orbitmechanic/CryptoZoo'><h5><i>(IoT BootCamp Project 2)</i></h5></a>
-      <div class='flex-containter projectboard shady' id='syntheticbiology'>
-        <div><a href='bunfactory.html'><h2 class='marquisText light'>Under Construction.</h2></a></div>
+  </header>
+
+  <main>
+    <section class="hero" id="station">
+      <div class="hero-media" aria-hidden="true">
+        <video id="station-loop" autoplay muted loop playsinline preload="metadata" poster="assets/station/gallifrey-poster.webp">
+          <source src="assets/station/gallifrey-loop.webm" type="video/webm">
+          <source src="assets/station/gallifrey-loop.mp4" type="video/mp4">
+        </video>
       </div>
-      <br>
-      <h2>Coin Pyramid</h2>
-      <h5>Stacking game of chance.</h5>
-      <h5><i>(IoT Solidity 201 Project)</i></h5>
-      <div class='flex-containter projectboard shady' id='pyramid'>
-        <div><a href='coinpyramid.html'><h2 class='marquisText light'>Under Construction.</h2></a></div>
+
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Gallifrey Station / Clark Point 1</p>
+          <h1><span>Orbit</span><span>Mechanic</span></h1>
+          <p class="hero-sub">Recovering rocket scientist. Building strange, useful things in low orbit.</p>
+          <div class="hero-actions">
+            <a class="btn btn-solid" href="#bays">Enter the docking bays <span aria-hidden="true">↓</span></a>
+            <a class="btn btn-ghost" href="https://www.youtube.com/@orbitmechanic" target="_blank" rel="noopener">The Omniverse <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <aside class="hero-rail" aria-label="Station telemetry">
+          <div class="rail-item">
+            <span class="rail-label">Station</span>
+            <span class="rail-value">Gallifrey</span>
+          </div>
+          <div class="rail-item">
+            <span class="rail-label">Orbit</span>
+            <span class="rail-value">Clark Point 1</span>
+          </div>
+          <div class="rail-item">
+            <span class="rail-label">Local</span>
+            <span class="rail-value">28.0°N 82.5°W</span>
+          </div>
+          <div class="rail-item">
+            <span class="rail-label">UTC</span>
+            <span class="rail-value" id="utc-clock">--:--:--</span>
+          </div>
+        </aside>
       </div>
-      <br>
-      <h2>Project Utopia</h2>
-      <h5>Exo-chain synthetic-biology-driven trading.</h5>
-      <a href='https://github.com/orbitmechanic/utopia'><h5><i>(IoT Technical Analysis/Trading Bots)</i></h5></a>
-      <div class='flex-containter projectboard shady' id='tradebot'>
-        <div><h2 class='marquisText light'>Coming Soon.</h2></div>
+
+      <div class="hero-foot">
+        <a class="scroll-cue" href="#log"><span>Scroll to dock</span><i></i></a>
+        <span class="hero-foot-note">An Orbital Investments LLC production</span>
+        <span class="hero-foot-note">Est. 2020 / Florida, USA</span>
       </div>
-      <br>
-      <h2>dETHlock</h2>
-      <h5>A deadman switch-based time-released asset ownership protocol.</h5>
-      <a href='https://github.com/orbitmechanic/scaffold-eth/tree/TimeLock'><h5><i>(ETHOnline MarketMake Hack-o-thon Entry)</i></h5></a>
-      <div class='flex-containter projectboard shady' id='lastwill'>
-        <div><a href='https://hack.ethglobal.co/showcase/dethlock-recQbwMs6gwj3cIMM'><h2 class='marquisText light'>ETHOnline MarketMake</h2></a></div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Projects</span><span>Games</span><span>Simulations</span><span>Tools</span><span>Experiments</span><span>Signals</span>
+        <span>Projects</span><span>Games</span><span>Simulations</span><span>Tools</span><span>Experiments</span><span>Signals</span>
       </div>
-      <br>
-      <br>
     </div>
-  </div>
-</div>
 
-<div class='jumbotron text-center' id='footerband'>
-    <H2>An Orbital Investments LLC. Production.</H2>
-</div>
+    <section class="section manifesto" id="log">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-label">01 / Captain's log</p>
+          <div>
+            <h2>A small station with a long antenna.</h2>
+            <p class="section-intro">Part workshop, part arcade, part launch pad. The work here starts with a question and ends with something you can open in a browser.</p>
+          </div>
+        </div>
 
+        <div class="manifesto-grid">
+          <div class="manifesto-copy reveal">
+            <p class="lede">I'm Bob Clark — the Orbit Mechanic. I spent years around rockets, then traded the launch pad for a workbench and started building small worlds that make complicated systems legible.</p>
+            <p>Gallifrey Station is the home base for that work: local-first tools, playable experiments, and simulations that treat software as a place you can visit rather than a product you consume.</p>
+            <p>No trackers. No ads. No growth funnel. Just experiments, shipped.</p>
+          </div>
+
+          <dl class="station-card reveal">
+            <div><dt>Callsign</dt><dd>Orbit Mechanic</dd></div>
+            <div><dt>Home port</dt><dd>Florida, USA</dd></div>
+            <div><dt>Affiliation</dt><dd>Orbital Investments LLC</dd></div>
+            <div><dt>Mission</dt><dd>Make complex systems legible.</dd></div>
+            <div><dt>Signal</dt><dd class="signal-value"><i></i> Online</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bays" id="bays">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-label">02 / Docking bays</p>
+          <div>
+            <h2>Recent launches</h2>
+            <p class="section-intro">Six working experiments currently in orbit. Each one is live, openable, and built to be poked at.</p>
+          </div>
+        </div>
+
+        <div class="bays-grid">
+          <a class="bay reveal" href="https://orbitmechanic.github.io/sift/" target="_blank" rel="noopener" aria-label="Open Sift live demo">
+            <div class="bay-media">
+              <img src="assets/projects/sift.webp" alt="Sift interface with an editorial image board and search field" width="1200" height="750" decoding="async">
+              <span class="bay-index">Bay 01</span>
+              <span class="bay-status"><i></i> Live</span>
+            </div>
+            <div class="bay-body">
+              <h3>Sift</h3>
+              <p>A private, ad-free image board for the open web. Search, save links, and grow a quiet feed from what you keep.</p>
+              <div class="bay-tags"><span class="tag">Vanilla JS</span><span class="tag">Local-first</span><span class="tag">Live</span></div>
+              <span class="bay-link">Open bay <span aria-hidden="true">↗</span></span>
+            </div>
+          </a>
+
+          <a class="bay reveal" href="https://orbitmechanic.github.io/riptide-web/" target="_blank" rel="noopener" aria-label="Play Riptide">
+            <div class="bay-media">
+              <img src="assets/projects/riptide.webp" alt="Riptide anti-gravity racing title screen" width="1200" height="750" decoding="async">
+              <span class="bay-index">Bay 02</span>
+              <span class="bay-status"><i></i> Live</span>
+            </div>
+            <div class="bay-body">
+              <h3>Riptide</h3>
+              <p>An anti-gravity racer with serverless Pear multiplayer and a playable web build. San Fransokyo Circuit, Big 6 League.</p>
+              <div class="bay-tags"><span class="tag">Godot 4.7</span><span class="tag">Web</span><span class="tag">Multiplayer</span></div>
+              <span class="bay-link">Open bay <span aria-hidden="true">↗</span></span>
+            </div>
+          </a>
+
+          <a class="bay reveal" href="https://orbitmechanic.github.io/tak/" target="_blank" rel="noopener" aria-label="Play Tak">
+            <div class="bay-media">
+              <img src="assets/projects/tak.webp" alt="Tak board game interface" width="1200" height="750" decoding="async">
+              <span class="bay-index">Bay 03</span>
+              <span class="bay-status"><i></i> Live</span>
+            </div>
+            <div class="bay-body">
+              <h3>Tak</h3>
+              <p>The Tak board game with a Monte Carlo Tree Search opponent. Place stones, build roads, cap towers.</p>
+              <div class="bay-tags"><span class="tag">Godot 4.7</span><span class="tag">MCTS</span><span class="tag">Web</span></div>
+              <span class="bay-link">Open bay <span aria-hidden="true">↗</span></span>
+            </div>
+          </a>
+
+          <a class="bay reveal" href="https://orbitmechanic.github.io/hamburger-helper/" target="_blank" rel="noopener" aria-label="Play Hamburger Helper">
+            <div class="bay-media">
+              <img src="assets/projects/hamburger.webp" alt="Hamburger Helper arcade game title screen" width="1200" height="750" decoding="async">
+              <span class="bay-index">Bay 04</span>
+              <span class="bay-status"><i></i> Live</span>
+            </div>
+            <div class="bay-body">
+              <h3>Hamburger Helper</h3>
+              <p>A 2D burger-stacking arcade game in the tradition of Burgertime. Climb ladders, drop ingredients, throw pepper.</p>
+              <div class="bay-tags"><span class="tag">Godot 4</span><span class="tag">Arcade</span><span class="tag">Web</span></div>
+              <span class="bay-link">Open bay <span aria-hidden="true">↗</span></span>
+            </div>
+          </a>
+
+          <a class="bay reveal" href="https://orbitmechanic.github.io/cellular_autonoma/" target="_blank" rel="noopener" aria-label="Open Cellular Autonoma">
+            <div class="bay-media">
+              <img src="assets/projects/cellular.webp" alt="Cellular Autonoma landing page with a glowing cell diagram" width="1200" height="750" decoding="async">
+              <span class="bay-index">Bay 05</span>
+              <span class="bay-status"><i></i> Live</span>
+            </div>
+            <div class="bay-body">
+              <h3>Cellular Autonoma</h3>
+              <p>Self-replicating digital organisms that pay their own bills. Wallet-deployed smart-contract cells with metabolism and mitosis.</p>
+              <div class="bay-tags"><span class="tag">Solidity</span><span class="tag">EVM</span><span class="tag">Live</span></div>
+              <span class="bay-link">Open bay <span aria-hidden="true">↗</span></span>
+            </div>
+          </a>
+
+          <a class="bay reveal" href="https://orbitmechanic.github.io/mindsphere/" target="_blank" rel="noopener" aria-label="Open Mindsphere">
+            <div class="bay-media">
+              <img src="assets/projects/mindsphere.webp" alt="Mindsphere 3D globe with connected thought nodes" width="1200" height="750" decoding="async">
+              <span class="bay-index">Bay 06</span>
+              <span class="bay-status"><i></i> Live</span>
+            </div>
+            <div class="bay-body">
+              <h3>Mindsphere</h3>
+              <p>A local-first sphere mind mapper. Thoughts live on a globe, connect into constellations, and never leave your device.</p>
+              <div class="bay-tags"><span class="tag">Godot</span><span class="tag">Local-first</span><span class="tag">Web</span></div>
+              <span class="bay-link">Open bay <span aria-hidden="true">↗</span></span>
+            </div>
+          </a>
+        </div>
+
+        <div class="archive-head reveal">
+          <h3>Also in the hangar</h3>
+          <a href="https://github.com/orbitmechanic?tab=repositories" target="_blank" rel="noopener">All repositories <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="archive reveal">
+          <a href="https://github.com/orbitmechanic/pacman-3d" target="_blank" rel="noopener"><strong>Pac-Man 3D</strong><span>Godot 4.7 / Maze chase</span></a>
+          <a href="https://github.com/orbitmechanic/ithildin" target="_blank" rel="noopener"><strong>Ithildin</strong><span>Godot / Geospatial dashboard</span></a>
+          <a href="https://github.com/orbitmechanic/anti-ai" target="_blank" rel="noopener"><strong>Anti-AI</strong><span>HTML / A statement</span></a>
+          <a href="https://github.com/orbitmechanic/swancoin1" target="_blank" rel="noopener"><strong>SwanCoin</strong><span>JavaScript / ETHOnline MVP</span></a>
+          <a href="https://github.com/orbitmechanic/universal-wallet" target="_blank" rel="noopener"><strong>Universal Wallet</strong><span>JavaScript / Wallet experiments</span></a>
+          <a href="https://github.com/orbitmechanic/Phaser-HelloWorld" target="_blank" rel="noopener"><strong>Phaser Hello World</strong><span>JavaScript / Game starter</span></a>
+          <a href="https://github.com/orbitmechanic/UnityJrProgrammerProject" target="_blank" rel="noopener"><strong>Unity Jr Programmer</strong><span>C# / Unity training</span></a>
+          <a href="https://github.com/orbitmechanic/station" target="_blank" rel="noopener"><strong>Station</strong><span>JavaScript / Original station</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dispatch" id="dispatch">
+      <div class="wrap">
+        <div class="dispatch-panel reveal">
+          <div class="dispatch-copy">
+            <p class="section-label">03 / Dispatch</p>
+            <h2>The Omniverse</h2>
+            <p>The station's video channel. Field notes on the convergence of emerging technologies — demos, experiments, and the occasional transmission from the workbench.</p>
+            <a class="btn btn-ghost" href="https://www.youtube.com/@orbitmechanic" target="_blank" rel="noopener">Open the channel <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="signal" aria-hidden="true">
+            <span class="signal-ring signal-ring-1"></span>
+            <span class="signal-ring signal-ring-2"></span>
+            <span class="signal-ring signal-ring-3"></span>
+            <span class="signal-core">
+              <svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gateways" id="gateways">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="section-label">04 / Gateways</p>
+          <div>
+            <h2>Open a channel</h2>
+            <p class="section-intro">The station is reachable on the usual frequencies. Pick a door.</p>
+          </div>
+        </div>
+
+        <div class="gateways-grid">
+          <a class="gateway reveal" href="https://www.linkedin.com/in/astrobob/" target="_blank" rel="me noopener">
+            <span class="glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5.4 3.6a2.2 2.2 0 1 0 0 4.4 2.2 2.2 0 0 0 0-4.4ZM3.6 9.6h3.6V21H3.6V9.6Zm6 0h3.45v1.56h.05c.48-.9 1.65-1.85 3.4-1.85 3.63 0 4.3 2.39 4.3 5.5V21h-3.6v-5.38c0-1.28-.02-2.93-1.78-2.93-1.78 0-2.05 1.39-2.05 2.83V21H9.6V9.6Z" fill="currentColor"/></svg>
+            </span>
+            <strong>LinkedIn</strong>
+            <span>Professional log / astrobob</span>
+            <em>Connect <span aria-hidden="true">↗</span></em>
+          </a>
+
+          <a class="gateway reveal" href="https://github.com/orbitmechanic" target="_blank" rel="me noopener">
+            <span class="glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-2.1c-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.68.08-.68 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.72.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.57 0-1.23.44-2.24 1.16-3.03-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.1 1.16a10.8 10.8 0 0 1 5.64 0c2.15-1.46 3.1-1.16 3.1-1.16.61 1.55.23 2.7.11 2.98.72.79 1.16 1.8 1.16 3.03 0 4.33-2.64 5.29-5.15 5.56.4.35.76 1.03.76 2.08v3.08c0 .3.2.65.78.54A11.2 11.2 0 0 0 12 .8Z" fill="currentColor"/></svg>
+            </span>
+            <strong>GitHub</strong>
+            <span>Source bay / orbitmechanic</span>
+            <em>Inspect <span aria-hidden="true">↗</span></em>
+          </a>
+
+          <a class="gateway reveal" href="https://www.youtube.com/@orbitmechanic" target="_blank" rel="me noopener">
+            <span class="glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M21.6 7.2a2.8 2.8 0 0 0-1.98-1.98C17.9 4.75 12 4.75 12 4.75s-5.9 0-7.62.47A2.8 2.8 0 0 0 2.4 7.2 29.2 29.2 0 0 0 1.92 12c0 1.62.16 3.24.48 4.8a2.8 2.8 0 0 0 1.98 1.98c1.72.47 7.62.47 7.62.47s5.9 0 7.62-.47a2.8 2.8 0 0 0 1.98-1.98c.32-1.56.48-3.18.48-4.8s-.16-3.24-.48-4.8ZM10.02 15.5v-7l6 3.5-6 3.5Z" fill="currentColor"/></svg>
+            </span>
+            <strong>YouTube</strong>
+            <span>Dispatch / The Omniverse</span>
+            <em>Watch <span aria-hidden="true">↗</span></em>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top reveal">
+        <div>
+          <p class="section-label">End of transmission</p>
+          <h2>See you in orbit.</h2>
+        </div>
+        <div class="footer-meta">
+          <span>Florida, USA<br>28.0°N 82.5°W</span>
+          <span>UTC <span id="utc-clock-2">--:--:--</span><br>No trackers. No ads.</span>
+          <span>Orbital Investments LLC<br>Gallifrey Station / Clark Point 1</span>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Orbital Investments LLC</span>
+        <button class="blueprint-toggle" id="blueprint-toggle" type="button">Press G for blueprint</button>
+        <a href="#station">Back to top <span aria-hidden="true">↑</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="blueprint-tag" aria-hidden="true">Blueprint mode / station schematic</div>
+  <script src="assets/js/station.js" defer></script>
 </body>
 </html>

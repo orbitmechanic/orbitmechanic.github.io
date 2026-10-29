@@ -1,0 +1,23 @@
+config_version=5
+
+[application]
+config/name="Gallifrey Station Hero"
+run/main_scene="res://Main.tscn"
+
+[display]
+window/size/viewport_width=1600
+window/size/viewport_height=1200
+window/size/window_width_override=1600
+window/size/window_height_override=1200
+window/stretch/mode="viewport"
+window/vsync/vsync_mode=0
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+anti_aliasing/quality/msaa_3d=2
+environment/defaults/default_clear_color=Color(0.006, 0.009, 0.016, 1)
+textures/default_filters/use_nearest_mipmap_filter=false
+
+[movie_writer]
+fps=30
