@@ -1,6 +1,6 @@
 # Gallifrey Station
 
-The personal site of Orbit Mechanic (Bob Clark) — games, tools, and simulations built in low orbit.
+The personal site of Orbit Mechanic (Bob Clark) — applications, games, and on-chain experiments built in low orbit.
 
 Live at [orbitmechanic.github.io](https://orbitmechanic.github.io/).
 
