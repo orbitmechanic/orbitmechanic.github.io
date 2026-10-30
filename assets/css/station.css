@@ -660,6 +660,46 @@ button {
     linear-gradient(180deg, #060a10 0%, var(--bg) 28%, var(--bg) 100%);
 }
 
+.bay-group {
+  margin-top: 48px;
+}
+
+.bay-group:first-of-type {
+  margin-top: 34px;
+}
+
+.bay-group + .bay-group {
+  padding-top: 34px;
+  border-top: 1px solid var(--line);
+}
+
+.bay-group-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
+}
+
+.bay-group-head h3 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--display);
+  font-size: clamp(1.15rem, 2vw, 1.65rem);
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.bay-group-head p {
+  max-width: 420px;
+  margin: 0;
+  color: var(--muted);
+  font: 400 .78rem/1.5 var(--mono);
+  letter-spacing: .02em;
+  text-align: right;
+}
+
 .bays-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1420,10 +1460,15 @@ body.blueprint .section-label {
     text-align: left;
   }
 
-  .archive-head {
+  .archive-head,
+  .bay-group-head {
     align-items: flex-start;
     flex-direction: column;
     gap: 10px;
+  }
+
+  .bay-group-head p {
+    text-align: left;
   }
 
   .station-card div {

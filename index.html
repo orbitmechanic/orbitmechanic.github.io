@@ -142,94 +142,116 @@
           <p class="section-label">02 / Docking bays</p>
           <div>
             <h2>Recent launches</h2>
-            <p class="section-intro">Six working experiments currently in orbit. Each one is live, openable, and built to be poked at.</p>
+            <p class="section-intro">Six live experiments, sorted by what they are: applications for daily use, games to poke at, and decentralized finance experiments that run on their own.</p>
           </div>
         </div>
 
-        <div class="bays-grid">
-          <a class="bay reveal" href="https://orbitmechanic.github.io/sift/" target="_blank" rel="noopener" aria-label="Open Sift live demo">
-            <div class="bay-media">
-              <img src="assets/projects/sift.webp" alt="Sift interface with an editorial image board and search field" width="1200" height="750" decoding="async">
-              <span class="bay-index">Bay 01</span>
-              <span class="bay-status"><i></i> Live</span>
-            </div>
-            <div class="bay-body">
-              <h3>Sift</h3>
-              <p>A private, ad-free image board for the open web. Search, save links, and grow a quiet feed from what you keep.</p>
-              <div class="bay-tags"><span class="tag">Vanilla JS</span><span class="tag">Local-first</span><span class="tag">Live</span></div>
-              <span class="bay-link">Open bay <span aria-hidden="true">↗</span></span>
-            </div>
-          </a>
+        <div class="bay-group reveal">
+          <div class="bay-group-head">
+            <h3>Applications</h3>
+            <p>Local-first tools with no accounts and no cloud dependency.</p>
+          </div>
+          <div class="bays-grid">
+            <a class="bay" href="https://orbitmechanic.github.io/mindsphere/" target="_blank" rel="noopener" aria-label="Open Mindsphere">
+              <div class="bay-media">
+                <img src="assets/projects/mindsphere.webp" alt="Mindsphere 3D globe with connected thought nodes" width="1200" height="750" decoding="async">
+                <span class="bay-index">Bay 01</span>
+                <span class="bay-status"><i></i> Live</span>
+              </div>
+              <div class="bay-body">
+                <h3>Mindsphere</h3>
+                <p>A local-first sphere mind mapper built with Rust and Bevy. Thoughts live on a globe, connect into constellations, and never leave your device.</p>
+                <div class="bay-tags"><span class="tag">Rust</span><span class="tag">Bevy 0.20</span><span class="tag">Local-first</span></div>
+                <span class="bay-link">Open bay <span aria-hidden="true">↗</span></span>
+              </div>
+            </a>
 
-          <a class="bay reveal" href="https://orbitmechanic.github.io/elevator-action-web/" target="_blank" rel="noopener" aria-label="Play Elevator Action: Red Door Protocol">
-            <div class="bay-media">
-              <img src="assets/projects/elevator-action.webp" alt="Elevator Action: Red Door Protocol title screen and gameplay" width="1200" height="750" decoding="async">
-              <span class="bay-index">Bay 02</span>
-              <span class="bay-status"><i></i> Live</span>
-            </div>
-            <div class="bay-body">
-              <h3>Elevator Action</h3>
-              <p>A 2D sprite-based arcade homage in Rust and Bevy. Ride two elevators through eight floors, crack the red doors, and reach the getaway car.</p>
-              <div class="bay-tags"><span class="tag">Rust</span><span class="tag">Bevy 0.20</span><span class="tag">Web</span></div>
-              <span class="bay-link">Open bay <span aria-hidden="true">↗</span></span>
-            </div>
-          </a>
+            <a class="bay" href="https://orbitmechanic.github.io/sift/" target="_blank" rel="noopener" aria-label="Open Sift live demo">
+              <div class="bay-media">
+                <img src="assets/projects/sift.webp" alt="Sift interface with an editorial image board and search field" width="1200" height="750" decoding="async">
+                <span class="bay-index">Bay 02</span>
+                <span class="bay-status"><i></i> Live</span>
+              </div>
+              <div class="bay-body">
+                <h3>Sift</h3>
+                <p>A private, ad-free image board for the open web. Search, save links, and grow a quiet feed from what you keep.</p>
+                <div class="bay-tags"><span class="tag">Vanilla JS</span><span class="tag">Local-first</span><span class="tag">Live</span></div>
+                <span class="bay-link">Open bay <span aria-hidden="true">↗</span></span>
+              </div>
+            </a>
+          </div>
+        </div>
 
-          <a class="bay reveal" href="https://orbitmechanic.github.io/tak/" target="_blank" rel="noopener" aria-label="Play Tak">
-            <div class="bay-media">
-              <img src="assets/projects/tak.webp" alt="Tak board game interface" width="1200" height="750" decoding="async">
-              <span class="bay-index">Bay 03</span>
-              <span class="bay-status"><i></i> Live</span>
-            </div>
-            <div class="bay-body">
-              <h3>Tak</h3>
-              <p>The Tak board game with a Monte Carlo Tree Search opponent. Place stones, build roads, cap towers.</p>
-              <div class="bay-tags"><span class="tag">Godot 4.7</span><span class="tag">MCTS</span><span class="tag">Web</span></div>
-              <span class="bay-link">Open bay <span aria-hidden="true">↗</span></span>
-            </div>
-          </a>
+        <div class="bay-group reveal">
+          <div class="bay-group-head">
+            <h3>Games</h3>
+            <p>Playable worlds, arcade homages, and one very determined board game.</p>
+          </div>
+          <div class="bays-grid">
+            <a class="bay" href="https://orbitmechanic.github.io/hamburger-helper/" target="_blank" rel="noopener" aria-label="Play Hamburger Helper">
+              <div class="bay-media">
+                <img src="assets/projects/hamburger.webp" alt="Hamburger Helper arcade game title screen" width="1200" height="750" decoding="async">
+                <span class="bay-index">Bay 03</span>
+                <span class="bay-status"><i></i> Live</span>
+              </div>
+              <div class="bay-body">
+                <h3>Hamburger Helper</h3>
+                <p>A 2D burger-stacking arcade game in the tradition of Burgertime. Climb ladders, drop ingredients, throw pepper.</p>
+                <div class="bay-tags"><span class="tag">Godot 4</span><span class="tag">Arcade</span><span class="tag">Web</span></div>
+                <span class="bay-link">Open bay <span aria-hidden="true">↗</span></span>
+              </div>
+            </a>
 
-          <a class="bay reveal" href="https://orbitmechanic.github.io/hamburger-helper/" target="_blank" rel="noopener" aria-label="Play Hamburger Helper">
-            <div class="bay-media">
-              <img src="assets/projects/hamburger.webp" alt="Hamburger Helper arcade game title screen" width="1200" height="750" decoding="async">
-              <span class="bay-index">Bay 04</span>
-              <span class="bay-status"><i></i> Live</span>
-            </div>
-            <div class="bay-body">
-              <h3>Hamburger Helper</h3>
-              <p>A 2D burger-stacking arcade game in the tradition of Burgertime. Climb ladders, drop ingredients, throw pepper.</p>
-              <div class="bay-tags"><span class="tag">Godot 4</span><span class="tag">Arcade</span><span class="tag">Web</span></div>
-              <span class="bay-link">Open bay <span aria-hidden="true">↗</span></span>
-            </div>
-          </a>
+            <a class="bay" href="https://orbitmechanic.github.io/elevator-action-web/" target="_blank" rel="noopener" aria-label="Play Elevator Action: Red Door Protocol">
+              <div class="bay-media">
+                <img src="assets/projects/elevator-action.webp" alt="Elevator Action: Red Door Protocol title screen and gameplay" width="1200" height="750" decoding="async">
+                <span class="bay-index">Bay 04</span>
+                <span class="bay-status"><i></i> Live</span>
+              </div>
+              <div class="bay-body">
+                <h3>Elevator Action</h3>
+                <p>A 2D sprite-based arcade homage in Rust and Bevy. Ride two elevators through eight floors, crack the red doors, and reach the getaway car.</p>
+                <div class="bay-tags"><span class="tag">Rust</span><span class="tag">Bevy 0.20</span><span class="tag">Web</span></div>
+                <span class="bay-link">Open bay <span aria-hidden="true">↗</span></span>
+              </div>
+            </a>
 
-          <a class="bay reveal" href="https://orbitmechanic.github.io/cellular_autonoma/" target="_blank" rel="noopener" aria-label="Open Cellular Autonoma">
-            <div class="bay-media">
-              <img src="assets/projects/cellular.webp" alt="Cellular Autonoma landing page with a glowing cell diagram" width="1200" height="750" decoding="async">
-              <span class="bay-index">Bay 05</span>
-              <span class="bay-status"><i></i> Live</span>
-            </div>
-            <div class="bay-body">
-              <h3>Cellular Autonoma</h3>
-              <p>Self-replicating digital organisms that pay their own bills. Wallet-deployed smart-contract cells with metabolism and mitosis.</p>
-              <div class="bay-tags"><span class="tag">Solidity</span><span class="tag">EVM</span><span class="tag">Live</span></div>
-              <span class="bay-link">Open bay <span aria-hidden="true">↗</span></span>
-            </div>
-          </a>
+            <a class="bay" href="https://orbitmechanic.github.io/tak/" target="_blank" rel="noopener" aria-label="Play Tak">
+              <div class="bay-media">
+                <img src="assets/projects/tak.webp" alt="Tak board game interface" width="1200" height="750" decoding="async">
+                <span class="bay-index">Bay 05</span>
+                <span class="bay-status"><i></i> Live</span>
+              </div>
+              <div class="bay-body">
+                <h3>Tak</h3>
+                <p>The Tak board game with a Monte Carlo Tree Search opponent. Place stones, build roads, cap towers.</p>
+                <div class="bay-tags"><span class="tag">Godot 4.7</span><span class="tag">MCTS</span><span class="tag">Web</span></div>
+                <span class="bay-link">Open bay <span aria-hidden="true">↗</span></span>
+              </div>
+            </a>
+          </div>
+        </div>
 
-          <a class="bay reveal" href="https://orbitmechanic.github.io/mindsphere/" target="_blank" rel="noopener" aria-label="Open Mindsphere">
-            <div class="bay-media">
-              <img src="assets/projects/mindsphere.webp" alt="Mindsphere 3D globe with connected thought nodes" width="1200" height="750" decoding="async">
-              <span class="bay-index">Bay 06</span>
-              <span class="bay-status"><i></i> Live</span>
-            </div>
-            <div class="bay-body">
-              <h3>Mindsphere</h3>
-              <p>A local-first sphere mind mapper. Thoughts live on a globe, connect into constellations, and never leave your device.</p>
-              <div class="bay-tags"><span class="tag">Godot</span><span class="tag">Local-first</span><span class="tag">Web</span></div>
-              <span class="bay-link">Open bay <span aria-hidden="true">↗</span></span>
-            </div>
-          </a>
+        <div class="bay-group reveal">
+          <div class="bay-group-head">
+            <h3>Decentralized finance experiments</h3>
+            <p>On-chain systems that pay their own way.</p>
+          </div>
+          <div class="bays-grid">
+            <a class="bay" href="https://orbitmechanic.github.io/cellular_autonoma/" target="_blank" rel="noopener" aria-label="Open Cellular Autonoma">
+              <div class="bay-media">
+                <img src="assets/projects/cellular.webp" alt="Cellular Autonoma landing page with a glowing cell diagram" width="1200" height="750" decoding="async">
+                <span class="bay-index">Bay 06</span>
+                <span class="bay-status"><i></i> Live</span>
+              </div>
+              <div class="bay-body">
+                <h3>Cellular Autonoma</h3>
+                <p>Self-replicating digital organisms that pay their own bills. Wallet-deployed smart-contract cells with metabolism and mitosis.</p>
+                <div class="bay-tags"><span class="tag">Solidity</span><span class="tag">EVM</span><span class="tag">Live</span></div>
+                <span class="bay-link">Open bay <span aria-hidden="true">↗</span></span>
+              </div>
+            </a>
+          </div>
         </div>
 
         <div class="archive-head reveal">
